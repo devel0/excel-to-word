@@ -20,17 +20,17 @@ generate word files from an excel and a word template
 
 ## screenshoots
 
+**main window**
 ![img](doc/Selection_006.png)
-*main window*
 
+**excel input datasource**
 ![img](doc/Selection_007.png)
-*excel input datasource*
 
+**word template**
 ![img](doc/Selection_008.png)
-*word template*
 
+**output from 1th row**
 ![img](doc/Selection_009.png)
-*output from 1th row*
 
+**generated files**
 ![img](doc/Selection_010.png)
-*output files*
