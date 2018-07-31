@@ -1,0 +1,75 @@
+﻿<Window x:Class="ExcelToWord.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelToWord"
+        mc:Ignorable="d"
+        Title="Excel to Word" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Mapping"/>
+                        <Button Content="Add" Margin="10,0,0,0" Click="AddMapping"/>
+                        <Button Content="Remove" Margin="10,0,0,0" Click="RemoveMapping"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="1" Content="Generate" Margin="10,0,0,0" Click="Generate" HorizontalContentAlignment="Right"/>
+                </Grid>
+
+                <DataGrid Grid.Row="1" x:Name="dg" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Excel column name" Binding="{Binding ColumnName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="Word token to replace" Binding="{Binding TokenToReplace, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Excel" FontWeight="Bold" TextAlignment="Right"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="ExcelPathfilename" Margin="5,0,0,0"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Word"  FontWeight="Bold"  TextAlignment="Right"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="WordPathfilename"  Margin="5,0,0,0"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Output folder"  FontWeight="Bold"  TextAlignment="Right"/>
+            <TextBox Grid.Row="2" Grid.Column="2" x:Name="OutputFolder"  Margin="5,0,0,0"/>
+
+
+        </Grid>
+    </Grid>
+</Window>
