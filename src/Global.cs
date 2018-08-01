@@ -32,27 +32,12 @@ namespace ExcelToWord
         }
 
         #endregion
-        
-        public string AppData
-        {
-            get
-            {
-                var path = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    "ExcelToWord");
-                if (!Directory.Exists(path)) Directory.CreateDirectory(path);
-
-                return path;
-            }
-        }
-
+                
         public string ConfigPathfilename
         {
             get
             {
-                var file = Path.Combine(AppData, "config.json");
-
-                return file;
+                return "excel-to-word-config.json";
             }
         }
 
